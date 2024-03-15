@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>首页 | 上确界组织</title>
+<link rel = "icon" href = "/logo.png">
+<meta charset = "UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1">
+<style>
+body
+{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar
+{
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+}
+
+#navbar a
+{
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#subnav
+{
+  float: left;
+  overflow: hidden;
+}
+
+#subnav #subnavbtn
+{
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+#navbar a:hover, #subnav:hover #subnavbtn
+{
+  background-color: #ff6347;
+}
+
+#subnav-content 
+{
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #ff6347;
+  width: 100%;
+  z-index: 1;
+}
+
+#subnav-content a 
+{
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+#subnav-content a:hover 
+{
+  color: yellow;
+}
+
+#subnav:hover #subnav-content 
+{
+  display: block;
+}
+
+.main 
+{   
+    -ms-flex: 70%;
+    flex: 70%;
+    background-image: url("/homebg.png");
+    padding: 20px;
+}
+
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* 标签样式 */
+.tab {
+  float: left;
+  border: 2px solid #003153;
+  border-radius: 10px;
+  background-color: #695e45;
+  width: 30%;
+  height: 300px;
+}
+
+/* 为选项卡内的按钮设置样式 */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: white;
+  padding: 22px 16px;
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* 悬停时改变按钮的背景颜色 */
+.tab button:hover {
+  background-color: #513c20;
+  color: white;
+}
+
+/* 创建一个活动的/当前的“标签按钮”类 */
+.tab button.active {
+  background-color: #f27635;
+  color: black;
+}
+
+/* 标签内容的样式 */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 2px solid #003153;
+  border-radius: 10px;
+  width: 70%;
+  border-left: none;
+  height: 300px;
+  background-color: rgba(242, 72, 27, 0.7);
+</style>
+</head>
+<body>
+
+<div id="navbar">
+  <a href="">首页</a>
+  <div id="subnav">
+    <button id="subnavbtn">关于 <i id="fa fa-caret-down"></i></button>
+    <div id="subnav-content">
+      <a href="/about/organization">组织简介</a>
+      <a href="/about/team">团队</a>
+    </div>
+  </div> 
+  <div id="subnav">
+    <button id="subnavbtn">Crab <i id="fa fa-caret-down"></i></button>
+    <div id="subnav-content">
+      <a href="/crab/pysicalcrab">物理 Crab</a>
+      <a href="/crab/webcrab">网络 Crab</a>
+      <a href="/crab/crabot">Cabot</a>
+    </div>
+  </div> 
+  <div id="subnav">
+    <button id="subnavbtn">其他项目 <i id="fa fa-caret-down"></i></button>
+    <div id="subnav-content">
+      <a href="#link1">Compusician</a>
+      <a href="#link2">Numbercraft</a>
+    </div>
+  </div>
+  <a href="#contact">联系方式</a>
+</div>
+  
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'about')" id="defaultOpen">关于 Crabot</button>
+  <button class="tablinks" onclick="openCity(event, 'alpha')">Crabot α</button>
+  <button class="tablinks" onclick="openCity(event, 'download')">Crabot 下载</button>
+</div>
+
+<div id="about" class="tabcontent">
+  <h3>关于 Crabot</h3>
+  <p>这是一款简易的，基于简单自然语言处理技术的 AI，无商业性，目前仅供娱乐，为 Crab 计划的副产品。</p>
+</div>
+
+<div id="alpha" class="tabcontent">
+  <h3>Crabot α</h3>
+  <p>Crabot 的第一个产品，简陋但不丑陋，回答模式类似 Eliza，但无实际意义。目前仅支持中文对话<s>，因为开发者太懒了</s>。虽然没有什么意义，但还是会考虑是不是拍脑袋更新（出中文版）。</p> 
+</div>
+
+<div id="download" class="tabcontent">
+  <h3>Crabot 下载</h3>
+  <p>Crabot α 最新版（旧版没有，发邮箱要吧）下载：</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// 获取 id="defaultOpen" 的元素并点击它
+document.getElementById("defaultOpen").click();
+</script>
+
+<script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
+
+</body>
+</html>
