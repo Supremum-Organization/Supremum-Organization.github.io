@@ -2,16 +2,18 @@
 <html>
 <head>
 <title>首页 | 上确界组织</title>
-<link rel="icon" href="/logo.png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "icon" href = "/logo.png">
+<meta charset = "UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1">
 <style>
-body {
+body
+{
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#navbar {
+#navbar
+{
   background-color: #333;
   position: fixed;
   top: 0;
@@ -20,7 +22,8 @@ body {
   transition: top 0.3s;
 }
 
-#navbar a {
+#navbar a
+{
   float: left;
   font-size: 16px;
   color: white;
@@ -29,12 +32,14 @@ body {
   text-decoration: none;
 }
 
-#subnav {
+#subnav
+{
   float: left;
   overflow: hidden;
 }
 
-#subnav #subnavbtn {
+#subnav #subnavbtn
+{
   font-size: 16px;  
   border: none;
   outline: none;
@@ -45,11 +50,13 @@ body {
   margin: 0;
 }
 
-#navbar a:hover, #subnav:hover #subnavbtn {
+#navbar a:hover, #subnav:hover #subnavbtn
+{
   background-color: #ff6347;
 }
 
-#subnav-content {
+#subnav-content 
+{
   display: none;
   position: absolute;
   left: 0;
@@ -58,19 +65,30 @@ body {
   z-index: 1;
 }
 
-#subnav-content a {
+#subnav-content a 
+{
   float: left;
   color: white;
   text-decoration: none;
 }
 
-#subnav-content a:hover {
+#subnav-content a:hover 
+{
   background-color: #87ceeb;
   color: black;
 }
 
-#subnav:hover #subnav-content {
+#subnav:hover #subnav-content 
+{
   display: block;
+}
+
+.main 
+{   
+    -ms-flex: 70%;
+    flex: 70%;
+    background-image: url("/homebg.png");
+    padding: 20px;
 }
 </style>
 </head>
@@ -103,7 +121,7 @@ body {
   <a href="#contact">联系方式</a>
 </div>
 
-<h2><br><br>欢迎来到 Supremum Organization！</h2>
+<h2 align="center"><br><br>欢迎来到 Supremum Organization！</h2>
 
 <script>
 var prevScrollpos = window.pageYOffset;
